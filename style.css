@@ -1,0 +1,323 @@
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.box-images{
+    margin: 0 auto;
+    width: 900px;
+    padding: 20px;
+    position: relative; 
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: orange;
+}
+.card-box{
+    min-width: 20%;
+    height: 150px;
+    width: 150px;
+    position: relative;   
+    padding: 16px;
+    box-sizing: border-box;
+}
+.inner-card{
+    width: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    height: 100%;
+    background-color: white;
+}
+.inner-card img{
+    width: 40px;
+    margin-bottom: 10px;
+    height: 40px;
+    pointer-events: none;
+}
+.title-box{
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.title-box p{
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 0;
+}
+.no-img .img-box{
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px dashed #000;
+}
+.no-img .img-box img{
+    margin-bottom: 0;
+}
+.tools-img{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.normal-img{
+    width: 100%;
+    height: 70%;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+}
+.normal-img img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    object-fit: contain;
+}
+.icon img{
+    width: 18px;
+    cursor: pointer;
+    height: 18px;
+}
+
+.modal-box{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+.modal-box .barrier{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+    opacity: 0.6;
+}
+.modal-box .img-box{
+    width: 500px;
+    height: 500px;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+}
+.modal-box .main-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.close-btn{
+    border-radius: 50%;
+    top: -20px;
+    right: -20px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.205);
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+}
+.close-btn img{
+    width: 80%;
+    height: 80%;
+}
+.modal-box.active{
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.3s;
+}
+.flex-cards{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.empty-box{
+    pointer-events: none;
+}
+
+.cropper-box{
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: 0.3s;
+    left: 0;
+    top: 0;
+}
+.cropper-box.active{
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.3s;
+}
+.cropper-box .barrier{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+    opacity: 0.6;
+}
+.content-crop{
+    position: absolute;
+    padding: 20px;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    max-height: 90%;
+    max-width: 90%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 6px;
+}
+.img-area{
+    width: 100%;
+    height: 400px;
+    max-height: 80%;
+}
+.img-area img{
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+.cropper-line, .cropper-point, .cropper-face{
+    background-color: orange !important;
+}
+.cropper-view-box {
+    outline: 1px solid orange !important;
+    outline-color: orange !important
+}
+.options{
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    padding-top: 40px;
+}
+.options .optionBtn{
+    margin-right: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.options .optionBtn:last-child{
+    margin-right: 0;
+}
+.optionBtn .icon{
+    transition: 0.3s;
+    border: 2px solid #000;
+    margin-bottom: 4px;
+    border-radius: 2px;
+}
+
+.optionBtn .optionTitle{
+    transition: 0.3s;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+}
+
+.optionBtn:hover .icon{
+    transition: 0.3s;
+    border: 2px solid orange;
+}
+.optionBtn:hover .optionTitle{
+    transition: 0.3s;
+    color: orange;
+}
+
+.optionBtn.active .optionTitle{
+    transition: 0.3s;
+    color: orange;
+}
+.optionBtn.active .icon{
+    border: 2px solid orange;
+
+}
+.optionBtn[mode="4-3"] .icon{
+    width: 30px;
+    height: 18px;
+}
+.optionBtn[mode="5-3"] .icon{
+    width: 40px;
+    height: 30px;
+}
+.optionBtn[mode="16-9"] .icon{
+    width: 50px;
+    height: 40px;
+}
+
+.optionBtn[mode="21-9"] .icon{
+    width: 70px;
+    height: 50px;
+}
+
+.ui-btn{
+    outline: none;
+    font-weight: bold;
+    height: 40px;
+    padding-left: 30px;
+    transition: 0.3s;
+    padding-right: 30px;
+    cursor: pointer;
+}
+.ui-btn:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.ui-btn.cancel{
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+.ui-btn.save{
+    color: white;
+    background-color: orange;
+    border-radius: 3px;
+    border: 1px solid white;
+}
+.button-box{
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.button-box button{
+    margin-right: 20px;
+}
+.button-box button:last-child{
+    margin-right: 0;
+}
+.button-box{
+    margin-top: 20px;
+    border-top: 1px solid black;
+    padding-top: 20px;
+}

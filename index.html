@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./libs/cropper/style.css">
+    <script src="./jquery.js"></script>
+    <script src="./libs/cropper/cropper.js"></script>
+    <script src="./libs/cropper/jquery-cropper.js"></script>
+    <script src="./jquery-ui.js"></script>
+    <script src="main.js"></script>
+    <title>Gallery</title>
+</head>
+
+<body>
+
+    <div class="box-images sortable">
+        <div class="card-box add-image" onclick="selectImages(this)">
+            <div class="inner-card">
+                <img src="./assets/add-img.svg" alt="">
+                <div class="title-box">
+                    <p>Add a photo</p>
+                </div>
+                <input onchange="getImages(this)" type="file" multiple accept="image/png, image/gif, image/jpeg" hidden>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-box">
+        <div class="barrier" onclick="closeModal(this)"></div>
+        <div class="img-box">
+            <div class="main-img">
+                <img src="./assets/img.jpg" alt="">
+            </div>
+            <div class="close-btn" onclick="closeModal(this)">
+                <img src="./icons/close.svg" alt="">
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="cropper-box">
+        <div class="barrier" onclick="closeCropper()"></div>
+        <div class="content-crop">
+            <div class="img-area">
+                <img src="" alt="">
+            </div>
+            <div class="close-btn" onclick="closeCropper()">
+                <img src="./icons/close.svg" alt="">
+            </div>
+
+            <div class="options">
+                <div class="optionBtn" mode="4-3" onclick="reSetting(4 / 3, this)">
+                    <div class="icon"></div>
+                    <div class="optionTitle">
+                        <span>4:3</span>
+                    </div>
+                </div>
+                <div class="optionBtn" mode="5-3" onclick="reSetting(5 / 3, this)">
+                    <div class="icon"></div>
+                    <div class="optionTitle">
+                        <span>5:3</span>
+                    </div>
+                </div>
+                <div class="optionBtn default active" mode="16-9" onclick="reSetting(16 / 9, this)">
+                    <div class="icon"></div>
+                    <div class="optionTitle">
+                        <span>16:9</span>
+                    </div>
+                </div>
+                <div class="optionBtn" mode="21-9" onclick="reSetting(21 / 9, this)">
+                    <div class="icon"></div>
+                    <div class="optionTitle">
+                        <span>21:9</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-box">
+                <button class="ui-btn cancel" onclick="closeCropper()">Cancel</button>
+                <button class="ui-btn save" onclick="cutImg()">Save</button>
+            </div>
+            
+        </div>
+    </div>
+
+
+</body>
+
+</html>
